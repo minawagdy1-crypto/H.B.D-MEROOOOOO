@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عيد ميلاد سعيد يا ميرولا! 🎂</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #ff758c, #ff7eb3, #f8bbd0);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: #fff;
+            text-align: center;
+            position: relative;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            padding: 30px 20px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+            max-width: 420px;
+            width: 90%;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            animation: fadeIn 1.5s ease-in-out;
+            z-index: 10;
+        }
+        /* إطار الصورة */
+        .img-container {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 15px auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #fff;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+            color: #fff;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #ffebee;
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #fce4ec;
+            min-height: 60px;
+        }
+        .btn {
+            background: #fff;
+            color: #ff4081;
+            border: none;
+            padding: 10px 22px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #f8bbd0;
+            color: #d81b60;
+            transform: translateY(-2px);
+        }
+        .hint {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-top: 10px;
+        }
+        /* تصميم حقوق المبرمج */
+        .developer-footer {
+            margin-top: 20px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            font-size: 0.82rem;
+            color: #fff;
+            line-height: 1.5;
+        }
+        .developer-footer span {
+            font-weight: bold;
+            color: #ffebee;
+        }
+        /* تأثير القلوب عند اللمس */
+        .touch-heart {
+            position: absolute;
+            font-size: 20px;
+            animation: floatUp 1.2s linear forwards;
+            pointer-events: none;
+            z-index: 20;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(0) scale(0.5); opacity: 1; }
+            100% { transform: translateY(-80px) scale(1.4); opacity: 0; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body onclick="createTouchHeart(event)">
+
+    <div class="card">
+        <!-- الصورة الشخصية (تم ربطها بالرابط المباشر) -->
+        <div class="img-container">
+            <img src="https://i.ibb.co/QFnnMY31/photo.jpg" alt="ذكريات الطفولة" onerror="this.src='photo.jpg'">
+        </div>
+        
+        <h1>🎉 ميرولا نجيب يونان 🎂</h1>
+        <div class="subtitle">كل سنة وأنتِ طيبة يا ميرووووووو! ✨</div>
+        
+        <p id="msg">
+            النهارده عيد ميلاد أجمل إنسانة! كل سنة وأنتِ ضحكة منورة الدنيا كلها، وأحلى أيام العمر معاكي وبوجودك. 💖
+        </p>
+        
+        <button class="btn" onclick="changeMessage(event)">اضغطي هنا لعرض المفاجأة والرسائل 🌹</button>
+        <div class="hint">💡 (دوسي في أي مكان في الشاشة لتنزل قلوب)</div>
+
+        <!-- حقوق المبرمج -->
+        <div class="developer-footer">
+            نشأ الموقع بواسطة المبرمج: <span>مينا وجدي يونان</span><br>
+            للتواصل: <span>01282353045</span>
+        </div>
+    </div>
+
+    <script>
+        const messages = [
+            "أنتِ إنسانة غالية جداً، ووجودك بيفرق في كل تفصيلة حلوة حوالينا! ربنا يديميكي نعمة في حياتنا 🌹✨",
+            "سنة حلوة تشبه قلبك الأبيض الجميل، ويا رب دايماً ناجحة ومبسوطة ومحقق كل اللي بتمنيه! 🎈💖",
+            "مهما السنين عدت، فضلتِ نفس الضحكة الصافية والقلب الطيب.. كل سنة وأنتِ أقرب لأحلامك يا ميروووو! 🥰🌟",
+            "أجمل صدفة وأحلى ذكريات.. ربنا يجعلها سنة مليانة فرح وراحة بال لقلبك الجميل! حقيقي الدنيا أحلى بوجودك 🍰🎉"
+        ];
+        
+        let msgIndex = 0;
+
+        function changeMessage(event) {
+            event.stopPropagation();
+            const msgElement = document.getElementById("msg");
+            msgElement.style.opacity = 0;
+            
+            setTimeout(() => {
+                msgElement.innerHTML = messages[msgIndex];
+                msgElement.style.opacity = 1;
+                msgIndex = (msgIndex + 1) % messages.length;
+            }, 200);
+        }
+
+        function createTouchHeart(event) {
+            const heart = document.createElement("div");
+            heart.classList.add("touch-heart");
+            heart.innerHTML = "💖";
+            
+            const x = event.clientX;
+            const y = event.clientY;
+            
+            heart.style.left = (x - 10) + "px";
+            heart.style.top = (y - 10) + "px";
+            
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 1200);
+        }
+    </script>
+</body>
+</html>
